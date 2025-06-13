@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { MessageCircle, Phone } from 'lucide-react';
 
 interface NavigationProps {
@@ -8,12 +8,13 @@ interface NavigationProps {
 }
 
 const Navigation = ({ isOpen, onClose }: NavigationProps) => {
+  const location = useLocation();
+
   const menuItems = [
     { title: 'ホーム', path: '/' },
-    { title: '在庫車両紹介', path: '/inventory' },
     { title: '整備サービス', path: '/services' },
     { title: '会社概要', path: '/about' },
-    { title: 'アクセス', path: '/access' },
+    { title: 'アクセス', path: '/', isScroll: true, scrollTarget: 'access' },
   ];
 
   const handleLineClick = () => {
@@ -26,6 +27,22 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
     onClose();
   };
 
+  const handleMenuClick = (item: typeof menuItems[0]) => {
+    if (item.isScroll && item.scrollTarget) {
+      if (location.pathname !== '/') {
+        // ホームページでない場合は、まずホームページに移動してからスクロール
+        window.location.href = `/#${item.scrollTarget}`;
+      } else {
+        // ホームページの場合は直接スクロール
+        const element = document.getElementById(item.scrollTarget);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    onClose();
+  };
+
   return (
     <nav className={`absolute top-full left-0 w-full bg-white shadow-lg transition-all duration-300 ${
       isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
@@ -34,13 +51,22 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
         <ul className="space-y-4">
           {menuItems.map((item) => (
             <li key={item.title}>
-              <Link
-                to={item.path}
-                onClick={onClose}
-                className="block text-lg text-gray-700 hover:text-blue-600 transition-colors py-2"
-              >
-                {item.title}
-              </Link>
+              {item.isScroll ? (
+                <button
+                  onClick={() => handleMenuClick(item)}
+                  className="block text-lg text-gray-700 hover:text-blue-600 transition-colors py-2 w-full text-left"
+                >
+                  {item.title}
+                </button>
+              ) : (
+                <Link
+                  to={item.path}
+                  onClick={onClose}
+                  className="block text-lg text-gray-700 hover:text-blue-600 transition-colors py-2"
+                >
+                  {item.title}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

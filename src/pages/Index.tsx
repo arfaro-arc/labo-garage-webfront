@@ -1,8 +1,8 @@
 
 import Header from '../components/Header';
 import HeroSlider from '../components/HeroSlider';
-import VehicleSlider from '../components/VehicleSlider';
 import ServiceSection from '../components/ServiceSection';
+import AccessSection from '../components/AccessSection';
 import LineButton from '../components/LineButton';
 
 const Index = () => {
@@ -12,8 +12,8 @@ const Index = () => {
       
       <main>
         <HeroSlider />
-        <VehicleSlider />
         <ServiceSection />
+        <AccessSection />
       </main>
       
       <footer className="bg-gray-800 text-white py-8">

@@ -1,7 +1,7 @@
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, Car } from "lucide-react";
 
 const HeroSlider = () => {
   const slides = [
@@ -31,6 +31,10 @@ const HeroSlider = () => {
 
   const handlePhoneClick = () => {
     window.location.href = 'tel:042-XXX-XXXX';
+  };
+
+  const handleCarsensorClick = () => {
+    window.open('https://www.carsensor.net/', '_blank');
   };
 
   return (
@@ -65,6 +69,14 @@ const HeroSlider = () => {
                       >
                         <Phone size={20} />
                         電話する
+                      </Button>
+                      <Button
+                        onClick={handleCarsensorClick}
+                        className="bg-[#FFA500] hover:bg-[#FF8C00] text-white px-8 py-3 text-lg flex items-center gap-2"
+                        size="lg"
+                      >
+                        <Car size={20} />
+                        カーセンサーを見に行く
                       </Button>
                     </div>
                   </div>
