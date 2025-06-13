@@ -12,6 +12,7 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
 
   const menuItems = [
     { title: 'ホーム', path: '/' },
+    { title: '車両販売', path: '/vehicles' },
     { title: '整備サービス', path: '/services' },
     { title: '会社概要', path: '/about' },
     { title: 'アクセス', path: '/', isScroll: true, scrollTarget: 'access' },
