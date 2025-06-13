@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import { MessageCircle, Phone } from 'lucide-react';
 
 interface NavigationProps {
   isOpen: boolean;
@@ -14,6 +15,16 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
     { title: '会社概要', path: '/about' },
     { title: 'アクセス', path: '/access' },
   ];
+
+  const handleLineClick = () => {
+    window.open('https://line.me/R/ti/p/@your-line-id', '_blank');
+    onClose();
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:042-XXX-XXXX';
+    onClose();
+  };
 
   return (
     <nav className={`absolute top-full left-0 w-full bg-white shadow-lg transition-all duration-300 ${
@@ -33,6 +44,26 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
             </li>
           ))}
         </ul>
+        
+        <div className="border-t pt-6 mt-6">
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">お問い合わせ</h3>
+          <div className="space-y-3">
+            <button
+              onClick={handleLineClick}
+              className="w-full flex items-center gap-3 bg-[#2ECC71] hover:bg-[#27AE60] text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              <MessageCircle size={20} />
+              <span>LINEで相談</span>
+            </button>
+            <button
+              onClick={handlePhoneClick}
+              className="w-full flex items-center gap-3 bg-[#3498DB] hover:bg-[#2980B9] text-white px-4 py-3 rounded-lg transition-colors"
+            >
+              <Phone size={20} />
+              <span>電話で相談</span>
+            </button>
+          </div>
+        </div>
       </div>
     </nav>
   );

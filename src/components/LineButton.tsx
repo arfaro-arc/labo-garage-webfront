@@ -1,14 +1,13 @@
 
 const LineButton = () => {
   const handleLineClick = () => {
-    // LINE公式アカウントのURLを設定（実際のURLに変更してください）
     window.open('https://line.me/R/ti/p/@your-line-id', '_blank');
   };
 
   return (
     <button
       onClick={handleLineClick}
-      className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 animate-pulse"
+      className="fixed bottom-6 right-6 bg-[#2ECC71] hover:bg-[#27AE60] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50"
       aria-label="LINE公式アカウントで相談"
     >
       <div className="flex items-center">

@@ -1,72 +1,81 @@
 
-import { useState, useEffect } from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
+import { Phone, MessageCircle } from "lucide-react";
 
 const HeroSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&h=600&fit=crop',
-      title: 'プロフェッショナルな整備技術',
-      subtitle: '最新設備と豊富な経験でお客様の愛車をサポート'
+      id: 1,
+      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&h=600&fit=crop',
+      title: 'あなたの愛車を最高のコンディションに',
+      subtitle: 'プロフェッショナルな技術で愛車をサポート'
     },
     {
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=600&fit=crop',
-      title: '丁寧な診断とメンテナンス',
-      subtitle: '細部まで点検し、安全で快適なドライブを提供'
+      id: 2,
+      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1200&h=600&fit=crop',
+      title: '信頼できる整備技術',
+      subtitle: '長年の経験と最新の設備でお応えします'
     },
     {
-      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1200&h=600&fit=crop',
-      title: '信頼できるアフターサービス',
-      subtitle: '整備後のフォローアップまで責任を持って対応'
+      id: 3,
+      image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&h=600&fit=crop',
+      title: '丁寧な車検・点検',
+      subtitle: '安全で快適なカーライフをお約束します'
     }
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    
-    return () => clearInterval(timer);
-  }, [slides.length]);
+  const handleLineClick = () => {
+    window.open('https://line.me/R/ti/p/@your-line-id', '_blank');
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:042-XXX-XXXX';
+  };
 
   return (
-    <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          >
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-              <div className="text-center text-white px-4">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-                  あなたの愛車を、<br />最高のコンディションに
-                </h1>
-                <h2 className="text-xl md:text-2xl mb-2 animate-fade-in">{slide.title}</h2>
-                <p className="text-lg md:text-xl animate-fade-in">{slide.subtitle}</p>
+    <section className="relative">
+      <Carousel className="w-full">
+        <CarouselContent>
+          {slides.map((slide) => (
+            <CarouselItem key={slide.id}>
+              <div className="relative h-[70vh] bg-cover bg-center" style={{backgroundImage: `url(${slide.image})`}}>
+                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div className="relative z-10 h-full flex items-center justify-center text-center text-white">
+                  <div className="max-w-4xl px-4">
+                    <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
+                      {slide.title}
+                    </h1>
+                    <p className="text-xl md:text-2xl mb-8 animate-fade-in">
+                      {slide.subtitle}
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+                      <Button
+                        onClick={handleLineClick}
+                        className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-8 py-3 text-lg flex items-center gap-2"
+                        size="lg"
+                      >
+                        <MessageCircle size={20} />
+                        LINEで連絡する
+                      </Button>
+                      <Button
+                        onClick={handlePhoneClick}
+                        className="bg-[#3498DB] hover:bg-[#2980B9] text-white px-8 py-3 text-lg flex items-center gap-2"
+                        size="lg"
+                      >
+                        <Phone size={20} />
+                        電話する
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      ))}
-      
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-50'
-            }`}
-          />
-        ))}
-      </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-4" />
+        <CarouselNext className="right-4" />
+      </Carousel>
     </section>
   );
 };
