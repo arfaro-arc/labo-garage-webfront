@@ -1,113 +1,128 @@
 
-import { Instagram } from 'lucide-react';
 import Header from '../components/Header';
 import LineButton from '../components/LineButton';
 
 const Access = () => {
-  const handleInstagramClick = () => {
-    window.open('https://instagram.com/labo_garage', '_blank');
+  const handleMapClick = () => {
+    // Googleマップアプリまたはブラウザで開く
+    window.open('https://maps.google.com/?q=八王子市', '_blank');
   };
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="pt-32 pb-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
-            アクセス
-          </h1>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">
-                店舗情報
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">所在地</h3>
-                  <div className="space-y-3">
+      <main className="pt-20">
+        <div className="bg-gray-50 py-16">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              アクセス
+            </h1>
+            <p className="text-xl text-gray-600">
+              自動車整備工場 LABO へのアクセス方法
+            </p>
+          </div>
+        </div>
+        
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* 地図 */}
+                <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <div 
+                    className="w-full h-96 cursor-pointer relative group"
+                    onClick={handleMapClick}
+                  >
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.845!2d139.31!3d35.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDM5JzM2LjAiTiAxMznCsDE4JzM2LjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890123"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="自動車整備工場 LABO 所在地"
+                    ></iframe>
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
+                      <div className="bg-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p className="text-gray-800 font-medium">クリックで大きな地図を開く</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* アクセス情報 */}
+                <div className="bg-white rounded-lg shadow-md p-8">
+                  <h2 className="text-2xl font-bold text-gray-800 mb-6">店舗情報</h2>
+                  
+                  <div className="space-y-6">
                     <div>
-                      <span className="font-medium text-gray-700">住所:</span>
-                      <span className="ml-2 text-gray-600">
+                      <h3 className="font-semibold text-gray-700 mb-2 flex items-center">
+                        <span className="w-2 h-2 bg-[#2ECC71] rounded-full mr-3"></span>
+                        住所
+                      </h3>
+                      <p className="text-gray-600 ml-5">
                         〒192-0000<br />
                         東京都八王子市○○町1-2-3
-                      </span>
+                      </p>
                     </div>
+                    
                     <div>
-                      <span className="font-medium text-gray-700">最寄駅:</span>
-                      <span className="ml-2 text-gray-600">JR八王子駅より徒歩15分</span>
+                      <h3 className="font-semibold text-gray-700 mb-2 flex items-center">
+                        <span className="w-2 h-2 bg-[#3498DB] rounded-full mr-3"></span>
+                        営業時間
+                      </h3>
+                      <p className="text-gray-600 ml-5">
+                        平日: 9:00 〜 18:00<br />
+                        土曜: お問い合わせください<br />
+                        日祝: 定休日
+                      </p>
                     </div>
+                    
                     <div>
-                      <span className="font-medium text-gray-700">駐車場:</span>
-                      <span className="ml-2 text-gray-600">5台完備</span>
+                      <h3 className="font-semibold text-gray-700 mb-2 flex items-center">
+                        <span className="w-2 h-2 bg-[#E74C3C] rounded-full mr-3"></span>
+                        電話番号
+                      </h3>
+                      <p className="text-gray-600 ml-5">
+                        <a href="tel:042-XXX-XXXX" className="hover:text-[#3498DB] transition-colors">
+                          042-XXX-XXXX
+                        </a>
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="font-semibold text-gray-700 mb-2 flex items-center">
+                        <span className="w-2 h-2 bg-[#F39C12] rounded-full mr-3"></span>
+                        アクセス
+                      </h3>
+                      <p className="text-gray-600 ml-5">
+                        JR中央線 八王子駅より徒歩10分<br />
+                        駐車場完備（5台）
+                      </p>
                     </div>
                   </div>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">営業時間</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <span className="font-medium text-gray-700">平日:</span>
-                      <span className="ml-2 text-gray-600">9:00 〜 18:00</span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-gray-700">定休日:</span>
-                      <span className="ml-2 text-gray-600">土曜日・日曜日・祝日</span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-gray-700">電話:</span>
-                      <span className="ml-2 text-gray-600">042-XXX-XXXX</span>
-                    </div>
+                  
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <p className="text-sm text-gray-500">
+                      ※ 初回ご来店の際は、事前にお電話またはLINEでご連絡いただけますとスムーズです。
+                    </p>
                   </div>
                 </div>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">
-                地図
-              </h2>
-              
-              <div className="w-full h-96 bg-gray-200 rounded-lg flex items-center justify-center">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12946.18147741633!2d139.31637995!3d35.66580115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191d52c3f3e3e5%3A0x1c1f8b9e8b9c4a4a!2z44CSMTkyLTAwNjMg5p2x5Lqs6YO96YKo546L5a2Q5biC!5e0!3m2!1sja!2sjp!4v1234567890123"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-lg"
-                ></iframe>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">
-                ご予約・お問い合わせ
-              </h2>
-              
-              <div className="text-center">
-                <p className="text-gray-700 mb-6">
-                  整備のご予約やお問い合わせは、InstagramのDMにて承っております。<br />
-                  お気軽にメッセージをお送りください。
-                </p>
-                
-                <button
-                  onClick={handleInstagramClick}
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-medium flex items-center justify-center mx-auto"
-                >
-                  <Instagram size={20} className="mr-2" />
-                  Instagram DMで予約
-                </button>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
+      
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm">
+            © 2024 自動車整備工場 LABO. All rights reserved.
+          </p>
+        </div>
+      </footer>
       
       <LineButton />
     </div>

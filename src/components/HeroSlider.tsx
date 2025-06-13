@@ -14,13 +14,13 @@ const HeroSlider = () => {
     {
       id: 2,
       image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1200&h=600&fit=crop',
-      title: '信頼できる整備技術',
+      title: 'あなたの愛車を最高のコンディションに',
       subtitle: '長年の経験と最新の設備でお応えします'
     },
     {
       id: 3,
       image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1200&h=600&fit=crop',
-      title: '丁寧な車検・点検',
+      title: 'あなたの愛車を最高のコンディションに',
       subtitle: '安全で快適なカーライフをお約束します'
     }
   ];
@@ -43,10 +43,10 @@ const HeroSlider = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                 <div className="relative z-10 h-full flex items-center justify-center text-center text-white">
                   <div className="max-w-4xl px-4">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
                       {slide.title}
                     </h1>
-                    <p className="text-xl md:text-2xl mb-8 animate-fade-in">
+                    <p className="text-lg md:text-xl lg:text-2xl mb-8 animate-fade-in">
                       {slide.subtitle}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">

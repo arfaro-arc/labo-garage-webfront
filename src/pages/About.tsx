@@ -7,115 +7,94 @@ const About = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <main className="pt-32 pb-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
-            会社概要
-          </h1>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">
-                自動車整備工場 LABO について
-              </h2>
-              
-              <p className="text-gray-700 leading-relaxed mb-6">
-                私たち LABO は、お客様の愛車を最高のコンディションに保つことを使命として、
-                八王子市で自動車整備サービスを提供しております。
-                豊富な経験と最新の技術を駆使し、安全で快適なカーライフをサポートいたします。
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">会社情報</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <span className="font-medium text-gray-700">会社名:</span>
-                      <span className="ml-2 text-gray-600">自動車整備工場 LABO</span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-gray-700">代表者:</span>
-                      <span className="ml-2 text-gray-600">田中 太郎</span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-gray-700">設立:</span>
-                      <span className="ml-2 text-gray-600">2010年4月</span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-gray-700">従業員数:</span>
-                      <span className="ml-2 text-gray-600">8名</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800">営業情報</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <span className="font-medium text-gray-700">営業時間:</span>
-                      <span className="ml-2 text-gray-600">平日 9:00 〜 18:00</span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-gray-700">定休日:</span>
-                      <span className="ml-2 text-gray-600">土曜日・日曜日・祝日</span>
-                    </div>
-                    <div>
-                      <span className="font-medium text-gray-700">電話番号:</span>
-                      <span className="ml-2 text-gray-600">042-XXX-XXXX</span>
+      <main className="pt-20">
+        <div className="bg-gray-50 py-16">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              会社概要
+            </h1>
+            <p className="text-xl text-gray-600">
+              自動車整備工場 LABO について
+            </p>
+          </div>
+        </div>
+        
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white rounded-lg shadow-md p-8 md:p-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-6">会社情報</h2>
+                    <div className="space-y-4">
+                      <div>
+                        <h3 className="font-semibold text-gray-700 mb-1">会社名</h3>
+                        <p className="text-gray-600">自動車整備工場 LABO</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-gray-700 mb-1">代表者</h3>
+                        <p className="text-gray-600">田中 太郎</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-gray-700 mb-1">所在地</h3>
+                        <p className="text-gray-600">
+                          〒192-0000<br />
+                          東京都八王子市○○町1-2-3
+                        </p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-gray-700 mb-1">電話番号</h3>
+                        <p className="text-gray-600">042-XXX-XXXX</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">
-                サービス内容
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                    <span className="text-gray-700">一般整備・修理</span>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                    <span className="text-gray-700">車検・点検</span>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                    <span className="text-gray-700">エンジンオイル交換</span>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                    <span className="text-gray-700">タイヤ交換・バランス調整</span>
-                  </div>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                    <span className="text-gray-700">板金・塗装</span>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                    <span className="text-gray-700">中古車販売</span>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                    <span className="text-gray-700">各種保険取扱い</span>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                    <span className="text-gray-700">レッカーサービス</span>
+                  
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-6">営業時間</h2>
+                    <div className="space-y-4">
+                      <div>
+                        <h3 className="font-semibold text-gray-700 mb-1">平日</h3>
+                        <p className="text-gray-600">9:00 〜 18:00</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-gray-700 mb-1">土曜日</h3>
+                        <p className="text-gray-600">お問い合わせください</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-gray-700 mb-1">日曜・祝日</h3>
+                        <p className="text-gray-600">定休日</p>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-8">
+                      <h2 className="text-2xl font-bold text-gray-800 mb-6">サービス内容</h2>
+                      <ul className="space-y-2 text-gray-600">
+                        <li>• 車検・点検</li>
+                        <li>• 一般修理・メンテナンス</li>
+                        <li>• 緊急対応・レッカーサービス</li>
+                        <li>• 各種相談・見積もり</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </main>
+      
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm">
+            © 2024 自動車整備工場 LABO. All rights reserved.
+          </p>
+        </div>
+      </footer>
       
       <LineButton />
     </div>
