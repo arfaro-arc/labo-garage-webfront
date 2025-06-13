@@ -1,0 +1,41 @@
+
+import { Link } from 'react-router-dom';
+
+interface NavigationProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const Navigation = ({ isOpen, onClose }: NavigationProps) => {
+  const menuItems = [
+    { title: 'ホーム', path: '/' },
+    { title: '在庫車両紹介', path: '/inventory' },
+    { title: '整備ブログ', path: '/blog' },
+    { title: '会社概要', path: '/about' },
+    { title: 'アクセス', path: '/access' },
+  ];
+
+  return (
+    <nav className={`absolute top-full left-0 w-full bg-white shadow-lg transition-all duration-300 ${
+      isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+    }`}>
+      <div className="container mx-auto px-4 py-6">
+        <ul className="space-y-4">
+          {menuItems.map((item) => (
+            <li key={item.title}>
+              <Link
+                to={item.path}
+                onClick={onClose}
+                className="block text-lg text-gray-700 hover:text-blue-600 transition-colors py-2"
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
