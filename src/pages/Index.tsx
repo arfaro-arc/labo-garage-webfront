@@ -1,6 +1,7 @@
 
 import Header from '../components/Header';
 import HeroSlider from '../components/HeroSlider';
+import VehicleSlider from '../components/VehicleSlider';
 import ServiceSection from '../components/ServiceSection';
 import LineButton from '../components/LineButton';
 
@@ -11,6 +12,7 @@ const Index = () => {
       
       <main>
         <HeroSlider />
+        <VehicleSlider />
         <ServiceSection />
       </main>
       

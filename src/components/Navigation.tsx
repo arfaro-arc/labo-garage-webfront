@@ -10,6 +10,7 @@ interface NavigationProps {
 const Navigation = ({ isOpen, onClose }: NavigationProps) => {
   const menuItems = [
     { title: 'ホーム', path: '/' },
+    { title: '在庫車両紹介', path: '/inventory' },
     { title: '整備サービス', path: '/services' },
     { title: '会社概要', path: '/about' },
     { title: 'アクセス', path: '/access' },
