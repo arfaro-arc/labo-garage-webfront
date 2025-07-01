@@ -1,3 +1,4 @@
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car } from "lucide-react";
@@ -55,7 +56,7 @@ const HeroSlider = () => {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
                       <Button
                         onClick={handleLineClick}
-                        className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-12 py-6 text-xl flex items-center gap-3"
+                        className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-12 py-9 text-xl flex items-center gap-3"
                         size="lg"
                       >
                         <MessageCircle size={24} />
@@ -63,7 +64,7 @@ const HeroSlider = () => {
                       </Button>
                       <Button
                         onClick={handlePhoneClick}
-                        className="bg-[#3498DB] hover:bg-[#2980B9] text-white px-12 py-6 text-xl flex items-center gap-3"
+                        className="bg-[#3498DB] hover:bg-[#2980B9] text-white px-12 py-9 text-xl flex items-center gap-3"
                         size="lg"
                       >
                         <Phone size={24} />
@@ -71,7 +72,7 @@ const HeroSlider = () => {
                       </Button>
                       <Button
                         onClick={handleCarsensorClick}
-                        className="bg-[#FFA500] hover:bg-[#FF8C00] text-white px-12 py-6 text-xl flex items-center gap-3"
+                        className="bg-[#FFA500] hover:bg-[#FF8C00] text-white px-12 py-9 text-xl flex items-center gap-3"
                         size="lg"
                       >
                         <Car size={24} />
