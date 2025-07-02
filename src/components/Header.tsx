@@ -18,7 +18,7 @@ const Header = () => {
           <img 
             src="/lovable-uploads/2ff50b82-babe-4890-923c-aa63963d7651.png" 
             alt="LABO inc." 
-            className="h-10 w-auto"
+            className="h-12 sm:h-14 md:h-16 w-auto"
           />
         </Link>
         
