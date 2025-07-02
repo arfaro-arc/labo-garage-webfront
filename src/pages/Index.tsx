@@ -13,9 +13,15 @@ const Index = () => {
       
       <main>
         <HeroSlider />
-        <ServiceSection />
-        <VehicleSlider />
-        <AccessSection />
+        <div id="Group Services">
+          <ServiceSection />
+        </div>
+        <div id="Group Inventory">
+          <VehicleSlider />
+        </div>
+        <div id="access">
+          <AccessSection />
+        </div>
       </main>
       
       <footer className="bg-gray-800 text-white py-8">
@@ -26,7 +32,9 @@ const Index = () => {
         </div>
       </footer>
       
-      <LineButton />
+      <div id="Group Contact">
+        <LineButton />
+      </div>
     </div>
   );
 };

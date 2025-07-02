@@ -10,11 +10,19 @@ interface NavigationProps {
 const Navigation = ({ isOpen, onClose }: NavigationProps) => {
   const location = useLocation();
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    onClose(); // Close the menu after clicking
+  };
+
   const menuItems = [
-    { title: 'ホーム', path: '/' },
-    { title: '車両販売', path: '/vehicles' },
-    { title: '整備サービス', path: '/services' },
-    { title: '会社概要', path: '/about' },
+    { title: 'ホーム', path: '/', isScroll: false },
+    { title: '整備サービス', sectionId: 'Group Services', isScroll: true },
+    { title: '車両販売', sectionId: 'Group Inventory', isScroll: true },
+    { title: 'お問い合わせ', sectionId: 'Group Contact', isScroll: true },
     { title: 'アクセス', path: '/', isScroll: true, scrollTarget: 'access' },
   ];
 
@@ -29,19 +37,23 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
   };
 
   const handleMenuClick = (item: typeof menuItems[0]) => {
-    if (item.isScroll && item.scrollTarget) {
-      if (location.pathname !== '/') {
-        // ホームページでない場合は、まずホームページに移動してからスクロール
-        window.location.href = `/#${item.scrollTarget}`;
-      } else {
-        // ホームページの場合は直接スクロール
-        const element = document.getElementById(item.scrollTarget);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+    if (item.isScroll) {
+      if (item.sectionId) {
+        // Scroll to the new section IDs
+        scrollToSection(item.sectionId);
+      } else if (item.scrollTarget) {
+        // Handle existing access section
+        if (location.pathname !== '/') {
+          window.location.href = `/#${item.scrollTarget}`;
+        } else {
+          const element = document.getElementById(item.scrollTarget);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
         }
+        onClose();
       }
     }
-    onClose();
   };
 
   return (
