@@ -1,4 +1,3 @@
-
 import Header from '../components/Header';
 import VehicleSlider from '../components/VehicleSlider';
 import LineButton from '../components/LineButton';
@@ -54,6 +53,54 @@ const Vehicles = () => {
       mileage: '3.2万km',
       price: '250万円',
       image: 'https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?w=400&h=300&fit=crop'
+    },
+    {
+      id: 7,
+      name: 'トヨタ アクア',
+      year: '2022年',
+      mileage: '1.5万km',
+      price: '190万円',
+      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&h=300&fit=crop'
+    },
+    {
+      id: 8,
+      name: 'ニッサン セレナ',
+      year: '2021年',
+      mileage: '2.3万km',
+      price: '300万円',
+      image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&h=300&fit=crop'
+    },
+    {
+      id: 9,
+      name: 'スバル フォレスター',
+      year: '2020年',
+      mileage: '3.8万km',
+      price: '270万円',
+      image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=400&h=300&fit=crop'
+    },
+    {
+      id: 10,
+      name: 'マツダ デミオ',
+      year: '2019年',
+      mileage: '4.5万km',
+      price: '130万円',
+      image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&h=300&fit=crop'
+    },
+    {
+      id: 11,
+      name: 'トヨタ ハリアー',
+      year: '2022年',
+      mileage: '1.2万km',
+      price: '380万円',
+      image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=300&fit=crop'
+    },
+    {
+      id: 12,
+      name: 'ホンダ ステップワゴン',
+      year: '2021年',
+      mileage: '2.0万km',
+      price: '290万円',
+      image: 'https://images.unsplash.com/photo-1580414054488-17c1b03a8189?w=400&h=300&fit=crop'
     }
   ];
 
