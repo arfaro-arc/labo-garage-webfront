@@ -1,10 +1,14 @@
 
 import Header from '../components/Header';
 import HeroSlider from '../components/HeroSlider';
-import VehicleSlider from '../components/VehicleSlider';
-import ServiceSection from '../components/ServiceSection';
-import AccessSection from '../components/AccessSection';
-import LineButton from '../components/LineButton';
+import LazySection from '../components/LazySection';
+import { lazy, Suspense } from 'react';
+
+// Lazy load components that are below the fold
+const VehicleSlider = lazy(() => import('../components/VehicleSlider'));
+const ServiceSection = lazy(() => import('../components/ServiceSection'));
+const AccessSection = lazy(() => import('../components/AccessSection'));
+const LineButton = lazy(() => import('../components/LineButton'));
 
 const Index = () => {
   return (
@@ -13,15 +17,24 @@ const Index = () => {
       
       <main className="w-full">
         <HeroSlider />
-        <div id="Group Services">
-          <ServiceSection />
-        </div>
-        <div id="Group Inventory">
-          <VehicleSlider />
-        </div>
-        <div id="access">
-          <AccessSection />
-        </div>
+        
+        <LazySection id="Group Services">
+          <Suspense fallback={<div className="min-h-[400px] bg-gray-50 animate-pulse" />}>
+            <ServiceSection />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection id="Group Inventory">
+          <Suspense fallback={<div className="min-h-[400px] bg-gray-50 animate-pulse" />}>
+            <VehicleSlider />
+          </Suspense>
+        </LazySection>
+        
+        <LazySection id="access">
+          <Suspense fallback={<div className="min-h-[300px] bg-gray-50 animate-pulse" />}>
+            <AccessSection />
+          </Suspense>
+        </LazySection>
       </main>
       
       <footer className="bg-gray-800 text-white py-6 sm:py-8">
@@ -33,7 +46,9 @@ const Index = () => {
       </footer>
       
       <div id="Group Contact">
-        <LineButton />
+        <Suspense fallback={null}>
+          <LineButton />
+        </Suspense>
       </div>
     </div>
   );

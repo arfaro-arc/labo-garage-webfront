@@ -1,28 +1,30 @@
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car } from "lucide-react";
+import { useMemo } from "react";
 
 const HeroSlider = () => {
-  const slides = [
+  const slides = useMemo(() => [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=600&fit=crop&q=80&auto=format',
       title: 'あなたの愛車を最高のコンディションに',
       subtitle: 'プロフェッショナルな技術で愛車をサポート'
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=600&fit=crop&q=80&auto=format',
       title: 'あなたの愛車を最高のコンディションに',
       subtitle: '長年の経験と最新の設備でお応えします'
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&h=600&fit=crop&q=80&auto=format',
       title: 'あなたの愛車を最高のコンディションに',
       subtitle: '安全で快適なカーライフをお約束します'
     }
-  ];
+  ], []);
 
   const handleLineClick = () => {
     window.open('https://lin.ee/Akkloat', '_blank');
@@ -38,11 +40,18 @@ const HeroSlider = () => {
 
   return (
     <section className="relative w-full overflow-hidden pt-16 md:pt-0">
-      <Carousel className="w-full">
+      <Carousel className="w-full" opts={{ loop: true, duration: 20 }}>
         <CarouselContent>
           {slides.map((slide) => (
             <CarouselItem key={slide.id}>
-              <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] bg-cover bg-center" style={{backgroundImage: `url(${slide.image})`}}>
+              <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh]">
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  loading={slide.id === 1 ? "eager" : "lazy"}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  decoding="async"
+                />
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                 <div className="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
                   <div className="max-w-4xl w-full">
