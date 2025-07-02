@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from 'react-router-dom';
 import { MessageCircle, Phone } from 'lucide-react';
 
@@ -27,7 +26,7 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
   ];
 
   const handleLineClick = () => {
-    window.open('https://line.me/R/ti/p/@your-line-id', '_blank');
+    window.open('https://lin.ee/Akkloat', '_blank');
     onClose();
   };
 

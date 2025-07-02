@@ -1,4 +1,3 @@
-
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car } from "lucide-react";
@@ -26,7 +25,7 @@ const HeroSlider = () => {
   ];
 
   const handleLineClick = () => {
-    window.open('https://line.me/R/ti/p/@your-line-id', '_blank');
+    window.open('https://lin.ee/Akkloat', '_blank');
   };
 
   const handlePhoneClick = () => {
