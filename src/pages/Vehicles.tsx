@@ -1,3 +1,4 @@
+
 import Header from '../components/Header';
 import VehicleSlider from '../components/VehicleSlider';
 import LineButton from '../components/LineButton';
@@ -119,15 +120,28 @@ const Vehicles = () => {
             </p>
           </div>
           
-          <Carousel className="w-full max-w-6xl mx-auto">
-            <CarouselContent className="-ml-2 md:-ml-4">
+          <Carousel 
+            className="w-full max-w-6xl mx-auto"
+            opts={{
+              align: "start",
+              loop: true,
+              dragFree: false,
+              containScroll: "trimSnaps",
+              slidesToScroll: 1,
+              duration: 25,
+              skipSnaps: false,
+              inViewThreshold: 0.7
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4 touch-pan-y">
               {vehicles.map((vehicle) => (
                 <CarouselItem key={vehicle.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow select-none">
                     <img 
                       src={vehicle.image} 
                       alt={vehicle.name}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-48 object-cover pointer-events-none"
+                      draggable={false}
                     />
                     <div className="p-6">
                       <h3 className="font-bold text-xl mb-2 text-gray-800">
