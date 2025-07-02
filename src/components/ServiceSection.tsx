@@ -1,3 +1,4 @@
+
 import { CheckCircle } from "lucide-react";
 
 const ServiceSection = () => {
@@ -32,28 +33,28 @@ const ServiceSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+    <section className="py-8 sm:py-12 md:py-16 bg-gray-50 overflow-hidden">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             整備サービス
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600">
             プロフェッショナル技術であなたの愛車を守ります
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+            <div key={index} className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center">
                 {service.title}
               </h3>
-              <ul className="space-y-4">
+              <ul className="space-y-3 sm:space-y-4">
                 {service.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#2ECC71] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 leading-relaxed">
+                  <li key={itemIndex} className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#2ECC71] flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 leading-relaxed text-sm sm:text-base">
                       {item}
                     </span>
                   </li>

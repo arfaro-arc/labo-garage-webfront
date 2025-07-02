@@ -8,10 +8,10 @@ import LineButton from '../components/LineButton';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
       
-      <main>
+      <main className="w-full">
         <HeroSlider />
         <div id="Group Services">
           <ServiceSection />
@@ -24,9 +24,9 @@ const Index = () => {
         </div>
       </main>
       
-      <footer className="bg-gray-800 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">
+      <footer className="bg-gray-800 text-white py-6 sm:py-8">
+        <div className="container mx-auto px-2 sm:px-4 text-center">
+          <p className="text-xs sm:text-sm">
             © 2024 自動車整備工場 LABO. All rights reserved.
           </p>
         </div>

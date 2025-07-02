@@ -1,3 +1,4 @@
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car } from "lucide-react";
@@ -37,44 +38,44 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="relative">
+    <section className="relative w-full overflow-hidden">
       <Carousel className="w-full">
         <CarouselContent>
           {slides.map((slide) => (
             <CarouselItem key={slide.id}>
-              <div className="relative h-[70vh] bg-cover bg-center" style={{backgroundImage: `url(${slide.image})`}}>
+              <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] bg-cover bg-center" style={{backgroundImage: `url(${slide.image})`}}>
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-                <div className="relative z-10 h-full flex items-center justify-center text-center text-white">
-                  <div className="max-w-4xl px-4">
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 animate-fade-in">
+                <div className="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
+                  <div className="max-w-4xl w-full">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 animate-fade-in">
                       {slide.title}
                     </h1>
-                    <p className="text-lg md:text-xl lg:text-2xl mb-8 animate-fade-in">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 animate-fade-in">
                       {slide.subtitle}
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in">
+                    <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 justify-center animate-fade-in max-w-full">
                       <Button
                         onClick={handleLineClick}
-                        className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-12 py-9 text-xl flex items-center gap-3"
+                        className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-9 text-sm sm:text-lg md:text-xl flex items-center gap-2 sm:gap-3 w-full sm:w-auto"
                         size="lg"
                       >
-                        <MessageCircle size={24} />
+                        <MessageCircle size={20} />
                         LINEで連絡する
                       </Button>
                       <Button
                         onClick={handlePhoneClick}
-                        className="bg-[#3498DB] hover:bg-[#2980B9] text-white px-12 py-9 text-xl flex items-center gap-3"
+                        className="bg-[#3498DB] hover:bg-[#2980B9] text-white px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-9 text-sm sm:text-lg md:text-xl flex items-center gap-2 sm:gap-3 w-full sm:w-auto"
                         size="lg"
                       >
-                        <Phone size={24} />
+                        <Phone size={20} />
                         電話する
                       </Button>
                       <Button
                         onClick={handleCarsensorClick}
-                        className="bg-[#FFA500] hover:bg-[#FF8C00] text-white px-12 py-9 text-xl flex items-center gap-3"
+                        className="bg-[#FFA500] hover:bg-[#FF8C00] text-white px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-9 text-sm sm:text-lg md:text-xl flex items-center gap-2 sm:gap-3 w-full sm:w-auto"
                         size="lg"
                       >
-                        <Car size={24} />
+                        <Car size={20} />
                         カーセンサーを見に行く
                       </Button>
                     </div>
@@ -84,8 +85,8 @@ const HeroSlider = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-4" />
-        <CarouselNext className="right-4" />
+        <CarouselPrevious className="left-2 sm:left-4" />
+        <CarouselNext className="right-2 sm:right-4" />
       </Carousel>
     </section>
   );

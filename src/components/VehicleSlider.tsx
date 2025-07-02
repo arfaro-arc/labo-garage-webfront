@@ -1,3 +1,4 @@
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 
@@ -38,13 +39,13 @@ const VehicleSlider = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+    <section className="py-8 sm:py-12 md:py-16 bg-gray-50 overflow-hidden">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             在庫車両
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-gray-600">
             厳選された高品質な中古車をご紹介
           </p>
         </div>
@@ -62,26 +63,26 @@ const VehicleSlider = () => {
             inViewThreshold: 0.7
           }}
         >
-          <CarouselContent className="-ml-2 md:-ml-4 touch-pan-y">
+          <CarouselContent className="-ml-1 sm:-ml-2 md:-ml-4 touch-pan-y">
             {vehicles.map((vehicle) => (
-              <CarouselItem key={vehicle.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={vehicle.id} className="pl-1 sm:pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow select-none">
                   <img 
                     src={vehicle.image} 
                     alt={vehicle.name}
-                    className="w-full h-48 object-cover pointer-events-none"
+                    className="w-full h-40 sm:h-48 object-cover pointer-events-none"
                     draggable={false}
                   />
-                  <div className="p-6">
-                    <h3 className="font-bold text-xl mb-2 text-gray-800">
+                  <div className="p-4 sm:p-6">
+                    <h3 className="font-bold text-lg sm:text-xl mb-2 text-gray-800">
                       {vehicle.name}
                     </h3>
                     <div className="space-y-2 mb-4">
-                      <p className="text-gray-600">年式: {vehicle.year}</p>
-                      <p className="text-gray-600">走行距離: {vehicle.mileage}</p>
-                      <p className="text-2xl font-bold text-[#3498DB]">{vehicle.price}</p>
+                      <p className="text-gray-600 text-sm sm:text-base">年式: {vehicle.year}</p>
+                      <p className="text-gray-600 text-sm sm:text-base">走行距離: {vehicle.mileage}</p>
+                      <p className="text-xl sm:text-2xl font-bold text-[#3498DB]">{vehicle.price}</p>
                     </div>
-                    <Button className="w-full border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white" variant="outline">
+                    <Button className="w-full border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white text-sm sm:text-base" variant="outline">
                       詳細を見る
                     </Button>
                   </div>
@@ -89,18 +90,18 @@ const VehicleSlider = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="left-1 sm:left-2" />
+          <CarouselNext className="right-1 sm:right-2" />
         </Carousel>
         
-        <div className="text-center mt-8">
+        <div className="text-center mt-6 sm:mt-8 px-2">
           <a 
             href="https://www.carsensor.net/shop/tokyo/329460001/stocklist/?BKKN=AU6346688296&BKKNTR=1"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Button 
-              className="bg-[#FFA500] hover:bg-[#FF8C00] text-white w-80 h-20 text-2xl font-bold"
+              className="bg-[#FFA500] hover:bg-[#FF8C00] text-white w-full max-w-80 h-16 sm:h-20 text-lg sm:text-2xl font-bold"
             >
               在庫車両一覧を見る
             </Button>
