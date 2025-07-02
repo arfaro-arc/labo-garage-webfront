@@ -38,7 +38,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden pt-16 md:pt-0">
       <Carousel className="w-full">
         <CarouselContent>
           {slides.map((slide) => (
