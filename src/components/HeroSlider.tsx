@@ -1,4 +1,3 @@
-
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car } from "lucide-react";
@@ -35,7 +34,7 @@ const HeroSlider = () => {
   };
 
   const handleCarsensorClick = () => {
-    window.open('https://www.carsensor.net/', '_blank');
+    window.open('https://www.carsensor.net/shop/tokyo/329460001/?BKKN=AU6346688296&BKKNTR=1', '_blank');
   };
 
   return (
