@@ -1,3 +1,4 @@
+
 import { Link, useLocation } from 'react-router-dom';
 import { MessageCircle, Phone } from 'lucide-react';
 
@@ -31,7 +32,7 @@ const Navigation = ({ isOpen, onClose }: NavigationProps) => {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:042-XXX-XXXX';
+    window.location.href = 'tel:0426963713';
     onClose();
   };
 
