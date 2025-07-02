@@ -81,12 +81,14 @@ const Vehicles = () => {
               {vehicles.map((vehicle) => (
                 <CarouselItem key={vehicle.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow select-none">
-                    <img 
-                      src={vehicle.image} 
-                      alt={vehicle.name}
-                      className="w-full h-48 object-cover pointer-events-none"
-                      draggable={false}
-                    />
+                    <div className="relative w-full aspect-[4/3] bg-gray-100">
+                      <img 
+                        src={vehicle.image} 
+                        alt={vehicle.name}
+                        className="w-full h-full object-contain pointer-events-none"
+                        draggable={false}
+                      />
+                    </div>
                     <div className="p-6">
                       <h3 className="font-bold text-xl mb-2 text-gray-800">
                         {vehicle.name}
