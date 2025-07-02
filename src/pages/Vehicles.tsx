@@ -1,6 +1,9 @@
+
 import Header from '../components/Header';
 import VehicleSlider from '../components/VehicleSlider';
 import LineButton from '../components/LineButton';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 
 const Vehicles = () => {
   const vehicles = [
@@ -69,30 +72,36 @@ const Vehicles = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {vehicles.map((vehicle) => (
-              <div key={vehicle.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <img 
-                  src={vehicle.image} 
-                  alt={vehicle.name}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="font-bold text-xl mb-2 text-gray-800">
-                    {vehicle.name}
-                  </h3>
-                  <div className="space-y-2 mb-4">
-                    <p className="text-gray-600">年式: {vehicle.year}</p>
-                    <p className="text-gray-600">走行距離: {vehicle.mileage}</p>
-                    <p className="text-2xl font-bold text-[#3498DB]">{vehicle.price}</p>
+          <Carousel className="w-full max-w-6xl mx-auto">
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {vehicles.map((vehicle) => (
+                <CarouselItem key={vehicle.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img 
+                      src={vehicle.image} 
+                      alt={vehicle.name}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="p-6">
+                      <h3 className="font-bold text-xl mb-2 text-gray-800">
+                        {vehicle.name}
+                      </h3>
+                      <div className="space-y-2 mb-4">
+                        <p className="text-gray-600">年式: {vehicle.year}</p>
+                        <p className="text-gray-600">走行距離: {vehicle.mileage}</p>
+                        <p className="text-2xl font-bold text-[#3498DB]">{vehicle.price}</p>
+                      </div>
+                      <Button className="w-full bg-[#FFA500] hover:bg-[#FF8C00] text-white">
+                        詳細を見る
+                      </Button>
+                    </div>
                   </div>
-                  <button className="w-full bg-[#FFA500] hover:bg-[#FF8C00] text-white py-2 px-4 rounded transition-colors">
-                    詳細を見る
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </main>
       
