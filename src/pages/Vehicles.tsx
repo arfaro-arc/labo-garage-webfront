@@ -9,99 +9,43 @@ const Vehicles = () => {
   const vehicles = [
     {
       id: 1,
-      name: 'トヨタ プリウス',
-      year: '2020年',
-      mileage: '3.5万km',
-      price: '180万円',
-      image: 'https://images.unsplash.com/photo-1493962853295-0fd70327578a?w=400&h=300&fit=crop'
+      name: 'ダイハツ ウェイク',
+      year: '2016年',
+      mileage: '15.5万km',
+      price: '40万円',
+      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/941/971/U00048941971/U00048941971_002L.JPG'
     },
     {
       id: 2,
-      name: 'ホンダ フィット',
-      year: '2019年',
-      mileage: '4.2万km',
-      price: '140万円',
-      image: 'https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?w=400&h=300&fit=crop'
+      name: 'スズキソリオ',
+      year: '2012年',
+      mileage: '4.9万km',
+      price: '40万円',
+      image: 'https://ccsrpcml.carsensor.net/CSphoto/ml/995/806/U00048995806/U00048995806_2_004.jpg?ver=detail001&impolicy=car_002'
     },
     {
       id: 3,
-      name: 'ニッサン ノート',
-      year: '2021年',
-      mileage: '2.1万km',
-      price: '160万円',
-      image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=400&h=300&fit=crop'
+      name: 'BMW 5 Series 523i ツーリング',
+      year: '2016年',
+      mileage: '5.9万km',
+      price: '104万円',
+      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/990/599/U00048990599/U00048990599_001.JPG?ver=detail001&impolicy=car_002'
     },
     {
       id: 4,
-      name: 'マツダ CX-5',
-      year: '2022年',
-      mileage: '1.8万km',
-      price: '280万円',
-      image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=400&h=300&fit=crop'
+      name: '日産エルグランド',
+      year: '2010年',
+      mileage: '12.1万km',
+      price: '50万円',
+      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/988/838/U00048988838/U00048988838_002.JPG?ver=detail001&impolicy=car_002'
     },
     {
       id: 5,
-      name: 'トヨタ ヴォクシー',
-      year: '2021年',
-      mileage: '2.8万km',
-      price: '320万円',
-      image: 'https://images.unsplash.com/photo-1493962853295-0fd70327578a?w=400&h=300&fit=crop'
-    },
-    {
-      id: 6,
-      name: 'ホンダ ヴェゼル',
-      year: '2020年',
-      mileage: '3.2万km',
-      price: '250万円',
-      image: 'https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?w=400&h=300&fit=crop'
-    },
-    {
-      id: 7,
-      name: 'トヨタ アクア',
-      year: '2022年',
-      mileage: '1.5万km',
-      price: '190万円',
-      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&h=300&fit=crop'
-    },
-    {
-      id: 8,
-      name: 'ニッサン セレナ',
-      year: '2021年',
-      mileage: '2.3万km',
-      price: '300万円',
-      image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&h=300&fit=crop'
-    },
-    {
-      id: 9,
-      name: 'スバル フォレスター',
-      year: '2020年',
-      mileage: '3.8万km',
-      price: '270万円',
-      image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=400&h=300&fit=crop'
-    },
-    {
-      id: 10,
-      name: 'マツダ デミオ',
+      name: 'ダイハツ ハイゼットカーゴ',
       year: '2019年',
-      mileage: '4.5万km',
-      price: '130万円',
-      image: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=400&h=300&fit=crop'
-    },
-    {
-      id: 11,
-      name: 'トヨタ ハリアー',
-      year: '2022年',
-      mileage: '1.2万km',
-      price: '380万円',
-      image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=300&fit=crop'
-    },
-    {
-      id: 12,
-      name: 'ホンダ ステップワゴン',
-      year: '2021年',
-      mileage: '2.0万km',
-      price: '290万円',
-      image: 'https://images.unsplash.com/photo-1580414054488-17c1b03a8189?w=400&h=300&fit=crop'
+      mileage: '7.4万km',
+      price: '75万円',
+      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/975/907/U00048975907/U00048975907_002.JPG?ver=detail001&impolicy=car_002'
     }
   ];
 
