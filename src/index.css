@@ -143,4 +143,15 @@
     font-weight: 500;
     letter-spacing: 0.025em;
   }
+
+  /* Hide Lovable badge */
+  [data-lovable-badge],
+  .lovable-badge,
+  iframe[src*="lovable"] + div,
+  [class*="lovable-watermark"],
+  [id*="lovable-badge"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
 }
