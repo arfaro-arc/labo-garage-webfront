@@ -1,4 +1,3 @@
-
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 
@@ -82,7 +81,7 @@ const VehicleSlider = () => {
                       <p className="text-gray-600">走行距離: {vehicle.mileage}</p>
                       <p className="text-2xl font-bold text-[#3498DB]">{vehicle.price}</p>
                     </div>
-                    <Button className="w-full bg-[#FFA500] hover:bg-[#FF8C00] text-white">
+                    <Button className="w-full border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white" variant="outline">
                       詳細を見る
                     </Button>
                   </div>
@@ -101,9 +100,7 @@ const VehicleSlider = () => {
             rel="noopener noreferrer"
           >
             <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white w-80 h-20 text-2xl font-bold"
+              className="bg-[#FFA500] hover:bg-[#FF8C00] text-white w-80 h-20 text-2xl font-bold"
             >
               在庫車両一覧を見る
             </Button>
