@@ -1,11 +1,13 @@
 
-import { CheckCircle, Settings, Sparkles } from "lucide-react";
+import { CheckCircle, Settings, Sparkles, Wrench, Clock, ClipboardCheck } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const ServiceSection = () => {
   const services = [
     {
       title: "車検・点検",
+      icon: ClipboardCheck,
+      iconColor: "text-[#3498DB]",
       items: [
         "国家資格整備士が点検整備を実施",
         "法定12ヶ月点検",
@@ -15,6 +17,8 @@ const ServiceSection = () => {
     },
     {
       title: "修理・メンテナンス",
+      icon: Wrench,
+      iconColor: "text-[#E67E22]",
       items: [
         "OBD診断・故障相談",
         "ECU書き換え",
@@ -24,6 +28,8 @@ const ServiceSection = () => {
     },
     {
       title: "緊急対応",
+      icon: Clock,
+      iconColor: "text-[#E74C3C]",
       items: [
         "スピード対応 × 明朗価格",
         "バッテリー上がり対応",
@@ -62,23 +68,29 @@ const ServiceSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto mb-8 sm:mb-12">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 text-center leading-tight break-words">
-                {service.title}
-              </h3>
-              <ul className="space-y-3 sm:space-y-4">
-                {service.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start gap-2 sm:gap-3">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#2ECC71] flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 leading-relaxed text-sm sm:text-base break-words">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <div key={index} className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <IconComponent className={`w-6 h-6 sm:w-8 sm:h-8 ${service.iconColor} flex-shrink-0`} />
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 leading-tight break-words">
+                    {service.title}
+                  </h3>
+                </div>
+                <ul className="space-y-3 sm:space-y-4">
+                  {service.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start gap-2 sm:gap-3">
+                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#2ECC71] flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700 leading-relaxed text-sm sm:text-base break-words">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
 
         {/* Two-column layout for Custom Equipment and Car Detailing */}
