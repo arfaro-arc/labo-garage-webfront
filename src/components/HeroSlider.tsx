@@ -47,36 +47,36 @@ const HeroSlider = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                 <div className="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
                   <div className="max-w-4xl w-full">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 animate-fade-in">
+                    <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 animate-fade-in leading-tight break-words hyphens-auto">
                       {slide.title}
                     </h1>
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 animate-fade-in">
+                    <p className="text-sm sm:text-base md:text-xl lg:text-2xl mb-6 sm:mb-8 animate-fade-in leading-relaxed break-words max-w-3xl mx-auto">
                       {slide.subtitle}
                     </p>
                     <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 justify-center animate-fade-in max-w-full">
                       <Button
                         onClick={handleLineClick}
-                        className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-9 text-sm sm:text-lg md:text-xl flex items-center gap-2 sm:gap-3 w-full sm:w-auto"
+                        className="bg-[#2ECC71] hover:bg-[#27AE60] text-white px-4 sm:px-8 md:px-12 py-5 sm:py-6 md:py-8 text-sm sm:text-base md:text-lg lg:text-xl flex items-center gap-2 sm:gap-3 w-full sm:w-auto min-h-[48px] whitespace-nowrap"
                         size="lg"
                       >
-                        <MessageCircle size={20} />
-                        LINEで連絡する
+                        <MessageCircle size={16} className="sm:w-5 sm:h-5" />
+                        <span className="break-keep">LINEで連絡する</span>
                       </Button>
                       <Button
                         onClick={handlePhoneClick}
-                        className="bg-[#3498DB] hover:bg-[#2980B9] text-white px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-9 text-sm sm:text-lg md:text-xl flex items-center gap-2 sm:gap-3 w-full sm:w-auto"
+                        className="bg-[#3498DB] hover:bg-[#2980B9] text-white px-4 sm:px-8 md:px-12 py-5 sm:py-6 md:py-8 text-sm sm:text-base md:text-lg lg:text-xl flex items-center gap-2 sm:gap-3 w-full sm:w-auto min-h-[48px] whitespace-nowrap"
                         size="lg"
                       >
-                        <Phone size={20} />
-                        電話する
+                        <Phone size={16} className="sm:w-5 sm:h-5" />
+                        <span className="break-keep">電話する</span>
                       </Button>
                       <Button
                         onClick={handleCarsensorClick}
-                        className="bg-[#FFA500] hover:bg-[#FF8C00] text-white px-4 sm:px-8 md:px-12 py-6 sm:py-8 md:py-9 text-sm sm:text-lg md:text-xl flex items-center gap-2 sm:gap-3 w-full sm:w-auto"
+                        className="bg-[#FFA500] hover:bg-[#FF8C00] text-white px-4 sm:px-8 md:px-12 py-5 sm:py-6 md:py-8 text-sm sm:text-base md:text-lg lg:text-xl flex items-center gap-2 sm:gap-3 w-full sm:w-auto min-h-[48px] whitespace-nowrap"
                         size="lg"
                       >
-                        <Car size={20} />
-                        カーセンサーを見に行く
+                        <Car size={16} className="sm:w-5 sm:h-5" />
+                        <span className="break-keep">カーセンサーを見に行く</span>
                       </Button>
                     </div>
                   </div>

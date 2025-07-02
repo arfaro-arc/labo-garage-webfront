@@ -40,12 +40,12 @@ const VehicleSlider = () => {
 
   return (
     <section className="py-8 sm:py-12 md:py-16 bg-gray-50 overflow-hidden">
-      <div className="container mx-auto px-2 sm:px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4 leading-tight break-words max-w-4xl mx-auto">
             在庫車両
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto break-words">
             厳選された高品質な中古車をご紹介
           </p>
         </div>
@@ -74,15 +74,15 @@ const VehicleSlider = () => {
                     draggable={false}
                   />
                   <div className="p-4 sm:p-6">
-                    <h3 className="font-bold text-lg sm:text-xl mb-2 text-gray-800">
+                    <h3 className="font-bold text-base sm:text-lg md:text-xl mb-2 text-gray-800 leading-tight break-words">
                       {vehicle.name}
                     </h3>
                     <div className="space-y-2 mb-4">
-                      <p className="text-gray-600 text-sm sm:text-base">年式: {vehicle.year}</p>
-                      <p className="text-gray-600 text-sm sm:text-base">走行距離: {vehicle.mileage}</p>
-                      <p className="text-xl sm:text-2xl font-bold text-[#3498DB]">{vehicle.price}</p>
+                      <p className="text-gray-600 text-xs sm:text-sm md:text-base break-words">年式: {vehicle.year}</p>
+                      <p className="text-gray-600 text-xs sm:text-sm md:text-base break-words">走行距離: {vehicle.mileage}</p>
+                      <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#3498DB] break-words">{vehicle.price}</p>
                     </div>
-                    <Button className="w-full border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white text-sm sm:text-base" variant="outline">
+                    <Button className="w-full border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white text-xs sm:text-sm md:text-base whitespace-nowrap" variant="outline">
                       詳細を見る
                     </Button>
                   </div>
@@ -94,14 +94,15 @@ const VehicleSlider = () => {
           <CarouselNext className="right-1 sm:right-2" />
         </Carousel>
         
-        <div className="text-center mt-6 sm:mt-8 px-2">
+        <div className="text-center mt-6 sm:mt-8 px-4">
           <a 
             href="https://www.carsensor.net/shop/tokyo/329460001/stocklist/?BKKN=AU6346688296&BKKNTR=1"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-block w-full max-w-80"
           >
             <Button 
-              className="bg-[#FFA500] hover:bg-[#FF8C00] text-white w-full max-w-80 h-16 sm:h-20 text-lg sm:text-2xl font-bold"
+              className="bg-[#FFA500] hover:bg-[#FF8C00] text-white w-full h-14 sm:h-16 md:h-20 text-base sm:text-lg md:text-2xl font-bold whitespace-nowrap break-keep"
             >
               在庫車両一覧を見る
             </Button>

@@ -6,12 +6,12 @@ const AccessSection = () => {
 
   return (
     <section id="access" className="py-8 sm:py-12 md:py-16 bg-gray-50 overflow-hidden">
-      <div className="container mx-auto px-2 sm:px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4 leading-tight break-words max-w-4xl mx-auto">
             アクセス
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto break-words">
             自動車整備工場 LABO へのアクセス方法
           </p>
         </div>
@@ -35,8 +35,8 @@ const AccessSection = () => {
                   title="自動車整備工場 LABO 所在地"
                 ></iframe>
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
-                  <div className="bg-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-gray-800 font-medium text-sm sm:text-base">クリックで大きな地図を開く</p>
+                  <div className="bg-white px-3 sm:px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 mx-2">
+                    <p className="text-gray-800 font-medium text-xs sm:text-sm md:text-base text-center break-words">クリックで大きな地図を開く</p>
                   </div>
                 </div>
               </div>
@@ -44,26 +44,26 @@ const AccessSection = () => {
             
             {/* アクセス情報 */}
             <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">店舗情報</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight break-words">店舗情報</h3>
               
               <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base">
-                    <span className="w-2 h-2 bg-[#2ECC71] rounded-full mr-3"></span>
+                  <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base leading-tight">
+                    <span className="w-2 h-2 bg-[#2ECC71] rounded-full mr-3 flex-shrink-0"></span>
                     住所
                   </h4>
-                  <p className="text-gray-600 ml-5 text-sm sm:text-base">
+                  <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed break-words">
                     〒192-0000<br />
                     東京都八王子市○○町1-2-3
                   </p>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base">
-                    <span className="w-2 h-2 bg-[#3498DB] rounded-full mr-3"></span>
+                  <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base leading-tight">
+                    <span className="w-2 h-2 bg-[#3498DB] rounded-full mr-3 flex-shrink-0"></span>
                     営業時間
                   </h4>
-                  <p className="text-gray-600 ml-5 text-sm sm:text-base">
+                  <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed break-words">
                     平日: 9:00 〜 18:00<br />
                     土曜: お問い合わせください<br />
                     日祝: 定休日
@@ -71,23 +71,23 @@ const AccessSection = () => {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base">
-                    <span className="w-2 h-2 bg-[#E74C3C] rounded-full mr-3"></span>
+                  <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base leading-tight">
+                    <span className="w-2 h-2 bg-[#E74C3C] rounded-full mr-3 flex-shrink-0"></span>
                     電話番号
                   </h4>
-                  <p className="text-gray-600 ml-5 text-sm sm:text-base">
-                    <a href="tel:042-XXX-XXXX" className="hover:text-[#3498DB] transition-colors">
+                  <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed">
+                    <a href="tel:042-XXX-XXXX" className="hover:text-[#3498DB] transition-colors break-words">
                       042-XXX-XXXX
                     </a>
                   </p>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base">
-                    <span className="w-2 h-2 bg-[#F39C12] rounded-full mr-3"></span>
+                  <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base leading-tight">
+                    <span className="w-2 h-2 bg-[#F39C12] rounded-full mr-3 flex-shrink-0"></span>
                     アクセス
                   </h4>
-                  <p className="text-gray-600 ml-5 text-sm sm:text-base">
+                  <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed break-words">
                     JR中央線 八王子駅より徒歩10分<br />
                     駐車場完備（5台）
                   </p>
@@ -95,7 +95,7 @@ const AccessSection = () => {
               </div>
               
               <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
-                <p className="text-xs sm:text-sm text-gray-500">
+                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed break-words">
                   ※ 初回ご来店の際は、事前にお電話またはLINEでご連絡いただけますとスムーズです。
                 </p>
               </div>
