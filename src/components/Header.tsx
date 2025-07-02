@@ -16,7 +16,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="hover:opacity-80 transition-opacity">
           <img 
-            src="/lovable-uploads/2ff50b82-babe-4890-923c-aa63963d7651.png" 
+            src="/lovable-uploads/4b988250-060f-4dfe-a086-8cbff87f8f2a.png" 
             alt="LABO inc." 
             className="h-12 sm:h-14 md:h-16 w-auto drop-shadow-sm"
           />
