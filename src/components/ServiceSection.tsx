@@ -105,7 +105,7 @@ const ServiceSection = () => {
                     <div className="flex items-center gap-3 sm:gap-4">
                       <Settings className="w-6 h-6 sm:w-8 sm:h-8 text-[#3498DB] flex-shrink-0" />
                       <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 leading-tight break-words">
-                        カスタム・快適装備
+                        各種取り付け・快適装備
                       </h3>
                     </div>
                   </AccordionTrigger>
