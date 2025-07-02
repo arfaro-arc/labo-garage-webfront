@@ -1,7 +1,6 @@
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const VehicleSlider = () => {
   const vehicles = [
@@ -96,11 +95,19 @@ const VehicleSlider = () => {
         </Carousel>
         
         <div className="text-center mt-8">
-          <Link to="/inventory">
-            <Button variant="outline" size="lg" className="border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white">
+          <a 
+            href="https://www.carsensor.net/shop/tokyo/329460001/stocklist/?BKKN=AU6346688296&BKKNTR=1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white w-80 h-20 text-2xl font-bold"
+            >
               在庫車両一覧を見る
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>
