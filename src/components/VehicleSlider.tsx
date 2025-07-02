@@ -1,4 +1,3 @@
-
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 
@@ -35,6 +34,14 @@ const VehicleSlider = () => {
       mileage: '1.8万km',
       price: '280万円',
       image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=400&h=300&fit=crop'
+    },
+    {
+      id: 5,
+      name: 'スバル インプレッサ',
+      year: '2021年',
+      mileage: '2.5万km',
+      price: '220万円',
+      image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop'
     }
   ];
 
