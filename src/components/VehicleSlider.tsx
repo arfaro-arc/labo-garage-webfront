@@ -1,4 +1,5 @@
 
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 
@@ -10,7 +11,8 @@ const VehicleSlider = () => {
       year: '2016年',
       mileage: '15.5万km',
       price: '40万円',
-      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/941/971/U00048941971/U00048941971_002L.JPG'
+      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/941/971/U00048941971/U00048941971_002L.JPG',
+      detailUrl: 'https://www.carsensor.net/usedcar/detail/AU6346688296/index.html?TRCD=200002&RESTID=CS211800'
     },
     {
       id: 2,
@@ -18,7 +20,8 @@ const VehicleSlider = () => {
       year: '2012年',
       mileage: '4.9万km',
       price: '40万円',
-      image: 'https://ccsrpcml.carsensor.net/CSphoto/ml/995/806/U00048995806/U00048995806_2_004.jpg?ver=detail001&impolicy=car_002'
+      image: 'https://ccsrpcml.carsensor.net/CSphoto/ml/995/806/U00048995806/U00048995806_2_004.jpg?ver=detail001&impolicy=car_002',
+      detailUrl: 'https://www.carsensor.net/usedcar/detail/AU6348097333/index.html?TRCD=200002&RESTID=CS211800'
     },
     {
       id: 3,
@@ -26,7 +29,8 @@ const VehicleSlider = () => {
       year: '2016年',
       mileage: '5.9万km',
       price: '104万円',
-      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/990/599/U00048990599/U00048990599_001.JPG?ver=detail001&impolicy=car_002'
+      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/990/599/U00048990599/U00048990599_001.JPG?ver=detail001&impolicy=car_002',
+      detailUrl: 'https://www.carsensor.net/usedcar/detail/AU6346817009/index.html?TRCD=200002&RESTID=CS211800'
     },
     {
       id: 4,
@@ -34,7 +38,8 @@ const VehicleSlider = () => {
       year: '2010年',
       mileage: '12.1万km',
       price: '50万円',
-      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/988/838/U00048988838/U00048988838_002.JPG?ver=detail001&impolicy=car_002'
+      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/988/838/U00048988838/U00048988838_002.JPG?ver=detail001&impolicy=car_002',
+      detailUrl: 'https://www.carsensor.net/usedcar/detail/AU6347928266/index.html?TRCD=200002&RESTID=CS211800'
     },
     {
       id: 5,
@@ -42,7 +47,8 @@ const VehicleSlider = () => {
       year: '2019年',
       mileage: '7.4万km',
       price: '75万円',
-      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/975/907/U00048975907/U00048975907_002.JPG?ver=detail001&impolicy=car_002'
+      image: 'https://ccsrpcma.carsensor.net/CSphoto/bkkn/975/907/U00048975907/U00048975907_002.JPG?ver=detail001&impolicy=car_002',
+      detailUrl: 'https://www.carsensor.net/usedcar/detail/AU6346687958/index.html?TRCD=200002&RESTID=CS211800'
     }
   ];
 
@@ -92,9 +98,16 @@ const VehicleSlider = () => {
                       <p className="text-gray-600 text-xs sm:text-sm md:text-base break-words">走行距離: {vehicle.mileage}</p>
                       <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#3498DB] break-words">{vehicle.price}</p>
                     </div>
-                    <Button className="w-full border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white text-xs sm:text-sm md:text-base whitespace-nowrap" variant="outline">
-                      詳細を見る
-                    </Button>
+                    <a 
+                      href={vehicle.detailUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full"
+                    >
+                      <Button className="w-full border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white text-xs sm:text-sm md:text-base whitespace-nowrap" variant="outline">
+                        詳細を見る
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </CarouselItem>
@@ -124,3 +137,4 @@ const VehicleSlider = () => {
 };
 
 export default VehicleSlider;
+
