@@ -1,5 +1,3 @@
-
-
 import Header from '../components/Header';
 import VehicleSlider from '../components/VehicleSlider';
 import LineButton from '../components/LineButton';
@@ -139,4 +137,3 @@ const Vehicles = () => {
 };
 
 export default Vehicles;
-
