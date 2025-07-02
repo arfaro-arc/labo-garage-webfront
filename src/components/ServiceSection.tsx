@@ -1,5 +1,5 @@
 
-import { CheckCircle, Settings } from "lucide-react";
+import { CheckCircle, Settings, Sparkles } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const ServiceSection = () => {
@@ -41,6 +41,14 @@ const ServiceSection = () => {
     "持ち込みパーツ対応（事前相談歓迎）"
   ];
 
+  const detailingServices = [
+    "手洗い洗車・簡易コーティング",
+    "室内清掃・除菌・消臭",
+    "ヘッドライト黄ばみ除去＆コート",
+    "ウィンドウ撥水施工",
+    "エンジンルーム清掃（要相談）"
+  ];
+
   return (
     <section className="py-8 sm:py-12 md:py-16 bg-gray-50 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
@@ -73,32 +81,59 @@ const ServiceSection = () => {
           ))}
         </div>
 
-        {/* Custom & Comfort Equipment Accordion */}
+        {/* Two-column layout for Custom Equipment and Car Detailing */}
         <div className="max-w-6xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="custom-equipment" className="border-none">
-              <AccordionTrigger className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow mb-0 hover:no-underline [&[data-state=open]]:rounded-b-none">
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <Settings className="w-6 h-6 sm:w-8 sm:h-8 text-[#3498DB] flex-shrink-0" />
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 leading-tight break-words">
-                    カスタム・快適装備
-                  </h3>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="bg-white rounded-b-lg shadow-md px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 mt-0">
-                <ul className="space-y-3 sm:space-y-4">
-                  {customEquipmentItems.map((item, index) => (
-                    <li key={index} className="flex items-start gap-2 sm:gap-3">
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#2ECC71] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 leading-relaxed text-sm sm:text-base break-words">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+            
+            {/* Left Column: Custom & Comfort Equipment Accordion */}
+            <div>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="custom-equipment" className="border-none">
+                  <AccordionTrigger className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow mb-0 hover:no-underline [&[data-state=open]]:rounded-b-none">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <Settings className="w-6 h-6 sm:w-8 sm:h-8 text-[#3498DB] flex-shrink-0" />
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 leading-tight break-words">
+                        カスタム・快適装備
+                      </h3>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="bg-white rounded-b-lg shadow-md px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8 mt-0">
+                    <ul className="space-y-3 sm:space-y-4">
+                      {customEquipmentItems.map((item, index) => (
+                        <li key={index} className="flex items-start gap-2 sm:gap-3">
+                          <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#2ECC71] flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-700 leading-relaxed text-sm sm:text-base break-words">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            {/* Right Column: Car Detailing */}
+            <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 hover:shadow-lg transition-shadow">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-[#E74C3C] flex-shrink-0" />
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 leading-tight break-words">
+                  カーディティール
+                </h3>
+              </div>
+              <ul className="space-y-3 sm:space-y-4">
+                {detailingServices.map((service, index) => (
+                  <li key={index} className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#2ECC71] flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 leading-relaxed text-sm sm:text-base break-words">
+                      {service}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
