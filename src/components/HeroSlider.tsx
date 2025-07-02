@@ -1,4 +1,3 @@
-
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car } from "lucide-react";
@@ -30,7 +29,7 @@ const HeroSlider = () => {
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:042-XXX-XXXX';
+    window.location.href = 'tel:0426963713';
   };
 
   const handleCarsensorClick = () => {
