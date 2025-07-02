@@ -1,4 +1,3 @@
-
 import { CheckCircle } from "lucide-react";
 
 const ServiceSection = () => {
@@ -15,8 +14,8 @@ const ServiceSection = () => {
     {
       title: "修理・メンテナンス",
       items: [
-        "エンジン修理",
-        "ブレーキ交換",
+        "OBD診断・故障相談",
+        "ECU書き換え",
         "タイヤ交換",
         "エアコン修理"
       ]
@@ -24,7 +23,7 @@ const ServiceSection = () => {
     {
       title: "緊急対応",
       items: [
-        "レッカーサービス",
+        "スピード対応 × 明朗価格",
         "バッテリー上がり対応",
         "パンク修理",
         "応急処置対応"
