@@ -70,7 +70,7 @@ const VehicleSlider = () => {
                       <p className="text-gray-600">走行距離: {vehicle.mileage}</p>
                       <p className="text-2xl font-bold text-[#3498DB]">{vehicle.price}</p>
                     </div>
-                    <Button className="w-full bg-[#3498DB] hover:bg-[#2980B9] text-white">
+                    <Button className="w-full bg-[#FFA500] hover:bg-[#FF8C00] text-white">
                       詳細を見る
                     </Button>
                   </div>
@@ -84,7 +84,7 @@ const VehicleSlider = () => {
         
         <div className="text-center mt-8">
           <Link to="/inventory">
-            <Button variant="outline" size="lg" className="border-[#3498DB] text-[#3498DB] hover:bg-[#3498DB] hover:text-white">
+            <Button variant="outline" size="lg" className="border-[#FFA500] text-[#FFA500] hover:bg-[#FFA500] hover:text-white">
               在庫車両一覧を見る
             </Button>
           </Link>

@@ -1,4 +1,3 @@
-
 import Header from '../components/Header';
 import VehicleSlider from '../components/VehicleSlider';
 import LineButton from '../components/LineButton';
@@ -87,7 +86,7 @@ const Vehicles = () => {
                     <p className="text-gray-600">走行距離: {vehicle.mileage}</p>
                     <p className="text-2xl font-bold text-[#3498DB]">{vehicle.price}</p>
                   </div>
-                  <button className="w-full bg-[#3498DB] hover:bg-[#2980B9] text-white py-2 px-4 rounded transition-colors">
+                  <button className="w-full bg-[#FFA500] hover:bg-[#FF8C00] text-white py-2 px-4 rounded transition-colors">
                     詳細を見る
                   </button>
                 </div>
