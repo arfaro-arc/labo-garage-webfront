@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Button } from './ui/button';
@@ -7,13 +8,13 @@ const AccessSection = () => {
   const [isMapDialogOpen, setIsMapDialogOpen] = useState(false);
 
   const handleGoogleMapsOpen = () => {
-    const googleMapsUrl = 'https://www.google.com/maps?q=LABO+Garage';
+    const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=東京都八王子市左入町356-1+YMオートヴィラA106';
     window.open(googleMapsUrl, '_blank');
     setIsMapDialogOpen(false);
   };
 
   const handleAppleMapsOpen = () => {
-    const appleMapsUrl = 'http://maps.apple.com/?q=LABO+Garage';
+    const appleMapsUrl = 'http://maps.apple.com/?q=東京都八王子市左入町356-1+YMオートヴィラA106';
     window.open(appleMapsUrl, '_blank');
     setIsMapDialogOpen(false);
   };
@@ -30,7 +31,7 @@ const AccessSection = () => {
     if (isMobile()) {
       setIsMapDialogOpen(true);
     } else {
-      window.open('https://www.google.com/maps?q=LABO+Garage', '_blank');
+      window.open('https://www.google.com/maps/search/?api=1&query=東京都八王子市左入町356-1+YMオートヴィラA106', '_blank');
     }
   };
 
@@ -52,7 +53,7 @@ const AccessSection = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="w-full h-64 sm:h-80 md:h-96 relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.845!2d139.31!3d35.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDM5JzM2LjAiTiAxMznCsDE4JzM2LjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890123"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO2TdLjyDbqPLs&q=東京都八王子市左入町356-1+YMオートヴィラA106"
                   width="100%"
                   height="100%"
                   style={{ border: 0, pointerEvents: 'auto' }}
@@ -135,8 +136,9 @@ const AccessSection = () => {
                     住所
                   </h4>
                   <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed break-words">
-                    〒192-0000<br />
-                    東京都八王子市○○町1-2-3
+                    〒192-0012<br />
+                    東京都八王子市左入町356‐1<br />
+                    YMオートヴィラA106
                   </p>
                 </div>
                 
@@ -158,8 +160,8 @@ const AccessSection = () => {
                     電話番号
                   </h4>
                   <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed">
-                    <a href="tel:042-XXX-XXXX" className="hover:text-[#3498DB] transition-colors break-words">
-                      042-XXX-XXXX
+                    <a href="tel:042-696-3713" className="hover:text-[#3498DB] transition-colors break-words">
+                      042-696-3713
                     </a>
                   </p>
                 </div>
@@ -170,8 +172,8 @@ const AccessSection = () => {
                     アクセス
                   </h4>
                   <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed break-words">
-                    JR中央線 八王子駅より徒歩10分<br />
-                    駐車場完備（5台）
+                    八王子インターチェンジより徒歩10分<br />
+                    駐車場完備（8台）
                   </p>
                 </div>
               </div>
