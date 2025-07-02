@@ -53,7 +53,7 @@ const AccessSection = () => {
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="w-full h-64 sm:h-80 md:h-96 relative">
                 <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO2TdLjyDbqPLs&q=東京都八王子市左入町356-1+YMオートヴィラA106"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.123456789!2d139.31623456789!3d35.661234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%85%AB%E7%8E%8B%E5%AD%90%E5%B8%82%E5%B7%A6%E5%85%A5%E7%94%BA356-1%20YM%E3%82%AA%E3%83%BC%E3%83%88%E3%83%B4%E3%82%A3%E3%83%A9A106!5e0!3m2!1sja!2sjp!4v1234567890123&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0, pointerEvents: 'auto' }}
