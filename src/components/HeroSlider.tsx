@@ -1,3 +1,4 @@
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car } from "lucide-react";
@@ -38,7 +39,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden pt-16 md:pt-0">
+    <section className="relative w-full overflow-hidden pt-20 md:pt-0">
       <Carousel className="w-full" opts={{ loop: true, duration: 20 }}>
         <CarouselContent>
           {slides.map((slide) => (
