@@ -40,7 +40,7 @@ const Index = () => {
       <footer className="bg-gray-800 text-white py-6 sm:py-8">
         <div className="container mx-auto px-2 sm:px-4 text-center">
           <p className="text-xs sm:text-sm">
-            © 2024 自動車整備工場 LABO. All rights reserved.
+            © 2023 自動車整備工場 LABO. All rights reserved.
           </p>
         </div>
       </footer>
