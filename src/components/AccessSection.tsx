@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Button } from './ui/button';
@@ -176,8 +175,8 @@ const AccessSection = () => {
                     メールアドレス
                   </h4>
                   <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed">
-                    <a href="mailto:info@labo-garage.com" className="hover:text-[#3498DB] transition-colors break-words">
-                      info@labo-garage.com
+                    <a href="mailto:labo.k.ishikawa@gmail.com" className="hover:text-[#3498DB] transition-colors break-words">
+                      labo.k.ishikawa@gmail.com
                     </a>
                   </p>
                 </div>
