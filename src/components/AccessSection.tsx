@@ -172,6 +172,18 @@ const AccessSection = () => {
                 
                 <div>
                   <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base leading-tight">
+                    <span className="w-2 h-2 bg-[#9B59B6] rounded-full mr-3 flex-shrink-0"></span>
+                    メールアドレス
+                  </h4>
+                  <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed">
+                    <a href="mailto:info@labo-garage.com" className="hover:text-[#3498DB] transition-colors break-words">
+                      info@labo-garage.com
+                    </a>
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-2 flex items-center text-sm sm:text-base leading-tight">
                     <span className="w-2 h-2 bg-[#F39C12] rounded-full mr-3 flex-shrink-0"></span>
                     アクセス
                   </h4>
