@@ -8,14 +8,14 @@ const HeroSlider = () => {
     {
       id: 1,
       image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=600&fit=crop&q=80&auto=format',
-      title: '「軽もフェラーリも、同じ精度で整備する。」',
-      subtitle: '「“整備の本質”を見極めるプロフェッショナルガレージ」'
+      title: '軽もフェラーリも、同じ精度で整備する。',
+      subtitle: '“整備の本質”を見極めるプロフェッショナルガレージ'
     },
     {
       id: 2,
       image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=600&fit=crop&q=80&auto=format',
       title: '必要な整備を、正しく、無駄なく行います。',
-      subtitle: '「LABOでは、高級車も軽自動車も、必要な作業に応じて適正価格をご提示します。整備内容に無駄はなく、作業には一切の妥協もありません。」'
+      subtitle: 'LABOでは、高級車も軽自動車も、必要な作業に応じて適正価格をご提示します。整備内容に無駄はなく、作業には一切の妥協もありません。'
     },
     {
       id: 3,
