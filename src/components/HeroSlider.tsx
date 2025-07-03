@@ -8,14 +8,14 @@ const HeroSlider = () => {
     {
       id: 1,
       image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=600&fit=crop&q=80&auto=format',
-      title: 'あなたの愛車を最高のコンディションに',
-      subtitle: 'プロフェッショナルな技術で愛車をサポート'
+      title: '「軽もフェラーリも、同じ精度で整備する。」',
+      subtitle: '「“整備の本質”を見極めるプロフェッショナルガレージ」'
     },
     {
       id: 2,
       image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=600&fit=crop&q=80&auto=format',
-      title: 'あなたの愛車を最高のコンディションに',
-      subtitle: '長年の経験と最新の設備でお応えします'
+      title: '車の価格に関係なく、必要な整備を、正しく、無駄なく、美しく行います。',
+      subtitle: '「LABOでは、高級車も軽自動車も、必要な作業に応じて適正価格をご提示します。整備内容に無駄はなく、作業には一切の妥協もありません。」'
     },
     {
       id: 3,
