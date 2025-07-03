@@ -1,4 +1,5 @@
 
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import { Phone, MessageCircle, Car } from "lucide-react";
@@ -10,7 +11,7 @@ const HeroSlider = () => {
       id: 1,
       image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&h=600&fit=crop&q=80&auto=format',
       title: '軽もフェラーリも、同じ精度で整備する。',
-      subtitle: '“整備の本質”を見極めるプロフェッショナルガレージ'
+      subtitle: '"整備の本質"を見極めるプロフェッショナルガレージ'
     },
     {
       id: 2,
@@ -44,7 +45,7 @@ const HeroSlider = () => {
         <CarouselContent>
           {slides.map((slide) => (
             <CarouselItem key={slide.id}>
-              <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh]">
+              <div className="relative h-[60vh] sm:h-[65vh] md:h-[70vh]">
                 <img
                   src={slide.image}
                   alt={slide.title}
@@ -55,10 +56,10 @@ const HeroSlider = () => {
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
                 <div className="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
                   <div className="max-w-4xl w-full">
-                    <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 animate-fade-in leading-tight break-words hyphens-auto">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-4 animate-fade-in leading-tight whitespace-normal">
                       {slide.title}
                     </h1>
-                    <p className="text-sm sm:text-base md:text-xl lg:text-2xl mb-6 sm:mb-8 animate-fade-in leading-relaxed break-words max-w-3xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 animate-fade-in leading-relaxed max-w-3xl mx-auto">
                       {slide.subtitle}
                     </p>
                     <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 justify-center animate-fade-in max-w-full">
@@ -101,3 +102,4 @@ const HeroSlider = () => {
 };
 
 export default HeroSlider;
+
