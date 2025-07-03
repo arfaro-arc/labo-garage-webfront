@@ -14,7 +14,7 @@ const HeroSlider = () => {
     {
       id: 2,
       image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=600&fit=crop&q=80&auto=format',
-      title: '車の価格に関係なく、必要な整備を、正しく、無駄なく、美しく行います。',
+      title: '必要な整備を、正しく、無駄なく行います。',
       subtitle: '「LABOでは、高級車も軽自動車も、必要な作業に応じて適正価格をご提示します。整備内容に無駄はなく、作業には一切の妥協もありません。」'
     },
     {
