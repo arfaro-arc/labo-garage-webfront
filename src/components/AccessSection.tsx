@@ -148,9 +148,8 @@ const AccessSection = () => {
                     営業時間
                   </h4>
                   <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed break-words">
-                    平日: 9:00 〜 18:00<br />
-                    土曜: お問い合わせください<br />
-                    日祝: 定休日
+                    営業時間: 9:00 〜 18:00<br />
+                    休日: 不定休 <br />
                   </p>
                 </div>
                 
@@ -164,6 +163,11 @@ const AccessSection = () => {
                       042-696-3713
                     </a>
                   </p>
+                  <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed">
+                    <a href="tel:042-696-3713" className="hover:text-[#3498DB] transition-colors break-words">
+                      042-696-3714（FAX）
+                    </a>
+                  </p>
                 </div>
                 
                 <div>
@@ -172,8 +176,8 @@ const AccessSection = () => {
                     アクセス
                   </h4>
                   <p className="text-gray-600 ml-5 text-xs sm:text-sm md:text-base leading-relaxed break-words">
-                    八王子インターチェンジより徒歩10分<br />
-                    駐車場完備（8台）
+                    八王子インターチェンジが目印<br />
+                    
                   </p>
                 </div>
               </div>
