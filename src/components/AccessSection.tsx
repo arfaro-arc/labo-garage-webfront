@@ -2,9 +2,15 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
 import { Button } from './ui/button';
 import { MapPin, Smartphone, Monitor } from 'lucide-react';
+import GoogleMap from './GoogleMap';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const AccessSection = () => {
   const [isMapDialogOpen, setIsMapDialogOpen] = useState(false);
+  const { elementRef, hasBeenVisible } = useIntersectionObserver({
+    threshold: 0.1,
+    rootMargin: '100px'
+  });
 
   const handleGoogleMapsOpen = () => {
     const googleMapsUrl = 'https://www.google.com/maps/search/?api=1&query=東京都八王子市左入町356-1+YMオートヴィラA106';
@@ -49,78 +55,92 @@ const AccessSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {/* 地図 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden" ref={elementRef}>
               <div className="w-full h-64 sm:h-80 md:h-96 relative">
-                <iframe
-                  src="https://www.google.com/maps?q=東京都八王子市左入町356-1+YMオートヴィラA106&hl=ja&z=16&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, pointerEvents: 'auto' }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="自動車整備工場 LABO 所在地"
-                  className="touch-auto"
-                ></iframe>
+                {hasBeenVisible ? (
+                  <GoogleMap
+                    address="東京都八王子市左入町356-1 YMオートヴィラA106"
+                    lat={35.685671182953016}
+                    lng={139.3450477263893}
+                    onMapClick={handleMapClick}
+                  />
+                ) : (
+                  // Fallback iframe for initial load or when Google Maps fails
+                  <iframe
+                    src="https://www.google.com/maps?q=東京都八王子市左入町356-1+YMオートヴィラA106&hl=ja&z=16&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, pointerEvents: 'auto' }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="自動車整備工場 LABO 所在地"
+                    className="touch-auto"
+                  ></iframe>
+                )}
                 
-                {/* Mobile overlay button */}
-                <div className="absolute bottom-4 left-4 md:hidden">
-                  <Dialog open={isMapDialogOpen} onOpenChange={setIsMapDialogOpen}>
-                    <DialogTrigger asChild>
-                      <Button 
-                        className="bg-white/90 text-gray-800 hover:bg-white shadow-lg backdrop-blur-sm"
-                        size="sm"
-                      >
-                        <MapPin className="w-4 h-4 mr-2" />
-                        地図アプリで開く
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-md">
-                      <DialogHeader>
-                        <DialogTitle className="text-center">地図アプリを選択</DialogTitle>
-                      </DialogHeader>
-                      <div className="space-y-3 pt-4">
+                {/* Mobile overlay button - only show when using iframe */}
+                {!hasBeenVisible && (
+                  <div className="absolute bottom-4 left-4 md:hidden">
+                    <Dialog open={isMapDialogOpen} onOpenChange={setIsMapDialogOpen}>
+                      <DialogTrigger asChild>
                         <Button 
-                          onClick={handleGoogleMapsOpen}
-                          className="w-full bg-[#4285F4] hover:bg-[#3367D6] text-white"
-                          size="lg"
+                          className="bg-white/90 text-gray-800 hover:bg-white shadow-lg backdrop-blur-sm"
+                          size="sm"
                         >
-                          <Monitor className="w-5 h-5 mr-3" />
-                          Google マップで開く
+                          <MapPin className="w-4 h-4 mr-2" />
+                          地図アプリで開く
                         </Button>
-                        {isIOS() && (
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-md">
+                        <DialogHeader>
+                          <DialogTitle className="text-center">地図アプリを選択</DialogTitle>
+                        </DialogHeader>
+                        <div className="space-y-3 pt-4">
                           <Button 
-                            onClick={handleAppleMapsOpen}
-                            className="w-full bg-[#007AFF] hover:bg-[#0056CC] text-white"
+                            onClick={handleGoogleMapsOpen}
+                            className="w-full bg-[#4285F4] hover:bg-[#3367D6] text-white"
                             size="lg"
                           >
-                            <Smartphone className="w-5 h-5 mr-3" />
-                            Apple マップで開く
+                            <Monitor className="w-5 h-5 mr-3" />
+                            Google マップで開く
                           </Button>
-                        )}
-                        <Button 
-                          onClick={() => setIsMapDialogOpen(false)}
-                          variant="outline"
-                          className="w-full"
-                        >
-                          キャンセル
-                        </Button>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </div>
+                          {isIOS() && (
+                            <Button 
+                              onClick={handleAppleMapsOpen}
+                              className="w-full bg-[#007AFF] hover:bg-[#0056CC] text-white"
+                              size="lg"
+                            >
+                              <Smartphone className="w-5 h-5 mr-3" />
+                              Apple マップで開く
+                            </Button>
+                          )}
+                          <Button 
+                            onClick={() => setIsMapDialogOpen(false)}
+                            variant="outline"
+                            className="w-full"
+                          >
+                            キャンセル
+                          </Button>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                )}
 
-                {/* Desktop click overlay */}
-                <div 
-                  className="absolute inset-0 cursor-pointer hidden md:block group"
-                  onClick={handleMapClick}
-                >
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
-                    <div className="bg-white px-3 sm:px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 mx-2">
-                      <p className="text-gray-800 font-medium text-xs sm:text-sm md:text-base text-center break-words">クリックで大きな地図を開く</p>
+                {/* Desktop click overlay - only show when using iframe */}
+                {!hasBeenVisible && (
+                  <div 
+                    className="absolute inset-0 cursor-pointer hidden md:block group"
+                    onClick={handleMapClick}
+                  >
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
+                      <div className="bg-white px-3 sm:px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 mx-2">
+                        <p className="text-gray-800 font-medium text-xs sm:text-sm md:text-base text-center break-words">クリックで大きな地図を開く</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
             
